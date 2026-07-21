@@ -23,7 +23,26 @@ Pixiv to Linx is a Tampermonkey userscript designed for the [SSPAI Linx68](https
 
 ## Installation
 
-Import [`Pixiv-to-Linx.user.js`](./Pixiv-to-Linx.user.js) into Tampermonkey and accept the requested network permissions.
+### Direct Install
+
+1. Install Tampermonkey in your browser.
+2. Open the [Pixiv to Linx userscript link](https://github.com/gcnwm/Pixiv-to-Linx/raw/refs/heads/main/Pixiv-to-Linx.user.js).
+3. Tampermonkey should intercept the `.user.js` file automatically and display its installation screen.
+4. Review the requested permissions and select **Install**.
+
+### Import From URL
+
+If the installation screen does not open automatically:
+
+1. Copy this URL:
+
+   ```text
+   https://github.com/gcnwm/Pixiv-to-Linx/raw/refs/heads/main/Pixiv-to-Linx.user.js
+   ```
+
+2. Open the Tampermonkey dashboard.
+3. Open **Utilities** and find **Import from URL**.
+4. Paste the URL, import the userscript, and confirm installation.
 
 The script uses `@connect *` because each keyboard may have a different IP address or hostname. The configured destination is validated at runtime and must be an HTTP or HTTPS origin without credentials, paths, queries, or fragments.
 
