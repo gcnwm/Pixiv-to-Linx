@@ -2,7 +2,7 @@
 
 [简体中文](./README.zh-CN.md) | English
 
-Pixiv to Linx is a Tampermonkey userscript that fetches the original image from a Pixiv artwork, prepares it for a Linx keyboard display, and pushes it directly to the device.
+Pixiv to Linx is a Tampermonkey userscript designed for the [SSPAI Linx68](https://sspai.com/product/143). It fetches the original image from a Pixiv artwork, prepares it for the keyboard display, and pushes it directly to the device.
 
 ## Features
 
@@ -18,7 +18,7 @@ Pixiv to Linx is a Tampermonkey userscript that fetches the original image from 
 
 - A browser with Tampermonkey installed.
 - Access to Pixiv and the original image server.
-- A Linx keyboard reachable from the browser's network.
+- An [SSPAI Linx68](https://sspai.com/product/143) reachable from the browser's network.
 - Keyboard firmware exposing `POST /image/upload` and accepting raw JPEG bytes.
 
 ## Installation

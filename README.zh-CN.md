@@ -2,7 +2,7 @@
 
 简体中文 | [English](./README.md)
 
-Pixiv to Linx 是一个 Tampermonkey 用户脚本。它可以获取 Pixiv 作品原图，将图片处理为适合 Linx 键盘屏幕的格式，并直接推送到设备。
+Pixiv to Linx 是一个专为[少数派 Linx68](https://sspai.com/product/143) 设计的 Tampermonkey 用户脚本。它可以获取 Pixiv 作品原图，将图片处理为适合键盘屏幕的格式，并直接推送到设备。
 
 ## 功能
 
@@ -18,7 +18,7 @@ Pixiv to Linx 是一个 Tampermonkey 用户脚本。它可以获取 Pixiv 作品
 
 - 安装了 Tampermonkey 的浏览器。
 - 可以访问 Pixiv 及其原图服务器。
-- 浏览器所在网络能够访问 Linx 键盘。
+- 浏览器所在网络能够访问[少数派 Linx68](https://sspai.com/product/143)。
 - 键盘固件提供 `POST /image/upload` 接口，并接受 JPEG 原始字节。
 
 ## 安装

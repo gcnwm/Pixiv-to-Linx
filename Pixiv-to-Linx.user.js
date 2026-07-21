@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Pixiv to Linx
 // @namespace    local.keyboard.image.push
-// @version      1.1.1
-// @description  Crop a Pixiv original to 142x428 JPEG and push it to a Linx keyboard.
+// @version      1.1.2
+// @description  Crop a Pixiv original to 142x428 JPEG and push it to an SSPAI Linx68 keyboard.
 // @author       Zois
 // @copyright    2026, Zois
 // @license      MIT
