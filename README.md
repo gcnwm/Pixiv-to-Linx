@@ -1,0 +1,68 @@
+# Pixiv to Linx
+
+[简体中文](./README.zh-CN.md) | English
+
+Pixiv to Linx is a Tampermonkey userscript that fetches the original image from a Pixiv artwork, prepares it for a Linx keyboard display, and pushes it directly to the device.
+
+## Features
+
+- Downloads the original image from Pixiv's `i.pximg.net` image server.
+- Falls back to the documented `i.pixiv.cat` reverse proxy when direct access fails.
+- Uses Cropper.js with the keyboard display's fixed `142:428` aspect ratio.
+- Exports the crop at its natural resolution before resizing it to exactly `142x428`.
+- Encodes at maximum JPEG quality first and reduces quality only when the result exceeds 512 KiB.
+- Verifies that the output is a baseline JPEG before upload.
+- Stores the Linx keyboard address locally through Tampermonkey.
+
+## Requirements
+
+- A browser with Tampermonkey installed.
+- Access to Pixiv and the original image server.
+- A Linx keyboard reachable from the browser's network.
+- Keyboard firmware exposing `POST /image/upload` and accepting raw JPEG bytes.
+
+## Installation
+
+Import [`Pixiv-to-Linx.user.js`](./Pixiv-to-Linx.user.js) into Tampermonkey and accept the requested network permissions.
+
+The script uses `@connect *` because each keyboard may have a different IP address or hostname. The configured destination is validated at runtime and must be an HTTP or HTTPS origin without credentials, paths, queries, or fragments.
+
+## Configuration
+
+The default keyboard address is `http://espressif.lan`, so it can be used immediately without first-use configuration. To use another device address, open the Tampermonkey menu for the script and select **设置键盘地址**. Supported forms include:
+
+```text
+192.168.5.204
+192.168.5.204:8080
+keyboard.local
+http://keyboard.local
+https://keyboard.example
+```
+
+The normalized custom address is stored with Tampermonkey's local value storage and overrides the default.
+
+## Usage
+
+1. Open a Pixiv artwork page.
+2. Select **推送到键盘** at the bottom-right of the page.
+3. Move or resize the fixed-ratio crop area.
+4. Select **裁剪并推送**.
+5. Wait for the success status in the crop dialog.
+
+The script crops at the selected ratio, exports the natural crop, resizes it to `142x428`, encodes it as a baseline JPEG, and uploads the bytes to:
+
+```text
+http(s)://<configured-keyboard-address>/image/upload
+```
+
+## Development Check
+
+Run the JavaScript syntax check with:
+
+```powershell
+node --check '.\Pixiv-to-Linx.user.js'
+```
+
+## License
+
+MIT. Copyright 2026 Zois.
